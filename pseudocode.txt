@@ -2,3 +2,5 @@ When computer randomly returns number 0, 1, or 2
 Return rock, paper or scissors
 When user inputs rock, paper or scissors
 Return rock, paper or scissors
+Keep track of computer score
+Keep track of user score

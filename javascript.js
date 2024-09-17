@@ -14,7 +14,18 @@ console.log(getComputerChoice());
 
 function getHumanChoice() {
     let answer = prompt("Rock, paper or scissors?");
-    return(answer.toLowerCase());
+        if (answer) {
+            return(answer);
+        } else {
+            return("Bye");
+        }
 }
 
 console.log(getHumanChoice());
+
+let humanScore = 0;
+let computerScore = 0;
+
+console.log(computerScore);
+
+
