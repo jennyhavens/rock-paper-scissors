@@ -15,26 +15,41 @@ console.log(getComputerChoice());
 function getHumanChoice() {
     let response = prompt("Rock, paper or scissors?");
         if (response === null) {
-            return("Bye!");
-        } else if (response === "") {
-            return ("No response, refresh the page and try again!");
+            return ("Bye!");
+        } else if (response.toLowerCase() === "rock") {
+            return ("rock");
+        } else if (response.toLowerCase() === "paper") {
+            return ("paper");
+        } else if (response.toLowerCase() === "scissors") {
+            return ("scissors");
         } else {
-            return(response.toLowerCase());
+            return ("Incorrect response, refresh the page and try again!");
         }
-}
-
+}    
 console.log(getHumanChoice());
+    
+    
+//        if (response === null) {
+//           return("Bye!");
+//        } else if (response === "") {
+//            return ("No response, refresh the page and try again!");
+//        } else if (response ) {
+//            return(response.toLowerCase());
+//        }
+//}
 
-let humanScore = 0;
-let computerScore = 0;
+//console.log(getHumanChoice());
+
+//let humanScore = 0;
+//let computerScore = 0;
 
 //function playRound(humanChoice,computerChoice) {
-  //  if (humanChoice === "rock" && computerChoice === "scissors") {
-    //}
+//    if (humanChoice === "rock" && computerChoice === "scissors") {
+
+//    }
 //}
 
 //const humanSelection = getHumanChoice();
 //const computerSelection = getComputerChoice();
 
 //playRound(humanSelection, computerSelection);
-
