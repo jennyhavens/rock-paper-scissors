@@ -4,3 +4,14 @@ When user inputs rock, paper or scissors
 Return rock, paper or scissors
 Keep track of computer score
 Keep track of user score
+When user wins the round or loses track score.
+Win:
+    * Rock beats scissors
+    * Scissors beat paper
+    * Paper beats rock
+Lose:
+    * Scissors lose to rock
+    * Paper loses to scissors
+    * Rock loses to paper
+Draw:
+    * Same answer
