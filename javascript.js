@@ -28,6 +28,7 @@ function getHumanChoice() {
    
 //Function to play a game of 5 rounds
 function playGame() {
+
      //Variables to keep the score
     let humanScore = 0;
     let computerScore = 0;
@@ -60,8 +61,7 @@ function playGame() {
         console.log(computerChoice);
         console.log(humanChoice);
     
-
-        //If valid choice??
+        //5 rounds
         round++;
 
         if (round<5) { 
@@ -80,6 +80,7 @@ function playGame() {
 
     getInput();
 
+    //Function to declare winner
     function declareWinner() {
         if (humanScore > computerScore) {
             alert (`The winner is ... YOU!! Congratulations!\n\nYour Score = ${humanScore} \nComputer Score = ${computerScore}`);
