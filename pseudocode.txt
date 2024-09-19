@@ -16,3 +16,4 @@ Lose:
 Draw:
     * Same answer
 Game is played for 5 rounds.
+When 5 rounds are over a winner will be declared.
