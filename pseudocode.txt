@@ -15,3 +15,4 @@ Lose:
     * Rock loses to paper
 Draw:
     * Same answer
+Game is played for 5 rounds.

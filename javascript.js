@@ -26,10 +26,12 @@ function getHumanChoice() {
         }
 }
    
- //Variables to keep the score
-let humanScore = 0;
-let computerScore = 0;
-let round = 0;
+//Function to play a game of 5 rounds
+function playGame() {
+     //Variables to keep the score
+    let humanScore = 0;
+    let computerScore = 0;
+    let round = 0;
 
     //Function to a play one round
     function playRound(humanChoice,computerChoice) {
@@ -51,8 +53,29 @@ let round = 0;
 
         console.log(computerChoice);
         console.log(humanChoice);
+
+        //If valid choice
+        round++;
+
+        if(round<5) { 
+            getInput();
+        }
+        else {
+            //End Game
+            alert(`game over!`);
+        }
     }
 
-    let humanSelection = getHumanChoice();
-    let computerSelection = getComputerChoice();
-    playRound(humanSelection, computerSelection);
+        function getInput() {
+            let humanSelection = getHumanChoice();
+            let computerSelection = getComputerChoice();
+            playRound(humanSelection, computerSelection);
+        }
+
+        getInput();
+    //for (let i = 0; i < 5; i++) {
+
+    //}
+}
+
+playGame();
