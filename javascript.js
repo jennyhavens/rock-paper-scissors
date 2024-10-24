@@ -10,21 +10,33 @@ function getComputerChoice() {
         }
 }
 
-//Gets the player's choice
 function getHumanChoice() {
-    let response = prompt("Rock, paper or scissors?");
-        if (response === null) {
-            alert ("Bye! Close the window or click okay to continue the game.");
-        } else if (response.toLowerCase() === "rock") {
-            return ("rock");
-        } else if (response.toLowerCase() === "paper") {
-            return ("paper");
-        } else if (response.toLowerCase() === "scissors") {
-            return ("scissors");
-        } else {
-            alert ("Incorrect response, try again in the next round!");
-        }
+    const buttons = document.querySelectorAll("button");
+        buttons.forEach((button) => {
+            button.addEventListener('click', () => {
+                if (button.id === "rock") {
+                    console.log("rock");
+                } else if (button.id === "paper") {
+                    console.log("paper");
+                } else if (button.id === "scissors") {
+                    console.log("scissors");
+                }
+            });
+        });
 }
+//Gets the player's choice
+//function getHumanChoice() {
+//    let response = document.querySelectorAll("button");
+//        if (response === "rock") {
+//            return ("rock");
+//        } else if (response === "paper") {
+//            return ("paper");
+//        } else if (response === "scissors") {
+//            return ("scissors");
+//        } else {
+//            alert ("Incorrect response, try again in the next round!");
+//        }
+//}
    
 //Function to play a game of 5 rounds
 //function playGame() {
@@ -62,10 +74,9 @@ function getHumanChoice() {
         console.log(humanChoice);
     } 
 
-const buttons = document.querySelectorAll("button");
-buttons.forEach((button) => {
-    button.addEventListener('click', playRound);
-});
+
+
+
    // button.addEventListener('click', () => {
         //alert(button.id);
     //});
@@ -84,9 +95,9 @@ buttons.forEach((button) => {
 //    }
 
 //    function getInput() {
-//        let humanSelection = getHumanChoice();
-//        let computerSelection = getComputerChoice();
-//        playRound(humanSelection, computerSelection);
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
 //    }
 
 //    getInput();
