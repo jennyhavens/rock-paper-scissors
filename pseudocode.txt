@@ -17,3 +17,15 @@ Draw:
     * Same answer
 Game is played for 5 rounds.
 When 5 rounds are over a winner will be declared.
+
+
+
+UI
+
+1. Create 3 buttons for each selection by grouping nodes with querySelectorAll
+2. Add an event listener to the buttons that call playRound function with the correct playerSelection every time a button is clicked
+3. Add a div for displaying results
+4. Change all of your console.logs into DOM methods
+5. Display the running score
+6. Announce the winner once the player reaches 5 points
+7. 

@@ -1,3 +1,10 @@
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        alert(button.id);
+    });
+});
+
 //Gets the computer's choice
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
@@ -27,16 +34,16 @@ function getHumanChoice() {
 }
    
 //Function to play a game of 5 rounds
-function playGame() {
+//function playGame() {
 
      //Variables to keep the score
     let humanScore = 0;
     let computerScore = 0;
-    let round = 0;
+//    let round = 0;
 
     //Rules
-    alert ("Welcome to a game of rock, paper, scissors!");
-    alert ("You have 5 rounds to beat the computer!\n\n* rock beats scissors\n* scissors beat paper\n* and paper beats rock\n\nGood Luck!")
+//    alert ("Welcome to a game of rock, paper, scissors!");
+//    alert ("You have 5 rounds to beat the computer!\n\n* rock beats scissors\n* scissors beat paper\n* and paper beats rock\n\nGood Luck!")
 
     //Function to a play one round
     function playRound(humanChoice,computerChoice) {
@@ -60,36 +67,36 @@ function playGame() {
 
         console.log(computerChoice);
         console.log(humanChoice);
-    
+    } 
         //5 rounds
-        round++;
+//        round++;
 
-        if (round<5) { 
-            getInput();
-        } else {
+//        if (round<5) { 
+//            getInput();
+//        } else {
             //End Game
-            declareWinner();
-        }
-    }
+//            declareWinner();
+//        }
+//    }
 
-    function getInput() {
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        playRound(humanSelection, computerSelection);
-    }
+//    function getInput() {
+//        let humanSelection = getHumanChoice();
+//        let computerSelection = getComputerChoice();
+//        playRound(humanSelection, computerSelection);
+//    }
 
-    getInput();
+//    getInput();
 
     //Function to declare winner
-    function declareWinner() {
-        if (humanScore > computerScore) {
-            alert (`The winner is ... YOU!! Congratulations!\n\nYour Score = ${humanScore} \nComputer Score = ${computerScore}`);
-        } else if (humanScore < computerScore) {
-            alert (`The winner is ... The Computer!\n\nYour Score = ${humanScore} \nComputer Score = ${computerScore}`);
-        } else {
-            alert (`No winner ... Its a tie!\n\nYour Score = ${humanScore} \nComputer Score = ${computerScore}`);
-        }
-    }
-}
+//    function declareWinner() {
+//        if (humanScore > computerScore) {
+//            alert (`The winner is ... YOU!! Congratulations!\n\nYour Score = ${humanScore} \nComputer Score = ${computerScore}`);
+//        } else if (humanScore < computerScore) {
+//            alert (`The winner is ... The Computer!\n\nYour Score = ${humanScore} \nComputer Score = ${computerScore}`);
+//       } else {
+//            alert (`No winner ... Its a tie!\n\nYour Score = ${humanScore} \nComputer Score = ${computerScore}`);
+//        }
+//    }
+//}
 
-playGame();
+//playGame();
