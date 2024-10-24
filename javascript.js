@@ -1,10 +1,3 @@
-const buttons = document.querySelectorAll("button");
-buttons.forEach((button) => {
-    button.addEventListener("click", () => {
-        alert(button.id);
-    });
-});
-
 //Gets the computer's choice
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
@@ -68,6 +61,17 @@ function getHumanChoice() {
         console.log(computerChoice);
         console.log(humanChoice);
     } 
+
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+    button.addEventListener('click', playRound);
+});
+   // button.addEventListener('click', () => {
+        //alert(button.id);
+    //});
+//});
+
+
         //5 rounds
 //        round++;
 
