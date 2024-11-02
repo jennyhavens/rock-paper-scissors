@@ -1,4 +1,3 @@
-//Gets the computer's choice
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
         if (randomNumber === 0) {
@@ -20,75 +19,100 @@ function getHumanChoice() {
 
 const container = document.querySelector('.scoreboard');
     const scoreBoard = document.createElement('div');
-        scoreBoard.textContent = 'Scoreboard:';
+    const boardName = document.createElement('p');
+        boardName.textContent = "Scoreboard";
+        boardName.style.textDecoration = "underline";
+        boardName.style.fontSize = "35px";
         container.appendChild(scoreBoard);
+        scoreBoard.appendChild(boardName);
     const playerScore = document.createElement('div');
         playerScore.textContent = "Player:";
         scoreBoard.appendChild(playerScore);
     const computScore = document.createElement('div');
         computScore.textContent = "Computer:";
         scoreBoard.appendChild(computScore);
-    const para = document.querySelector('.roundWinner');
-    const roundWinner = document.createElement('p');
-        para.appendChild(roundWinner);
-    const declare = document.querySelector('.choices');
-    const compChoiceMade = document.createElement('p');
-    const humanChoiceMade = document.createElement('p');
-        declare.appendChild(compChoiceMade);
-        declare.appendChild(humanChoiceMade);
-    const winner = document.querySelector('.winner');
-    const nameWinner = document.createElement('div');
-        winner.appendChild(nameWinner);
+    
+const para = document.querySelector('.roundWinner');
+const roundWinner = document.createElement('p');
+    para.appendChild(roundWinner);
+const declare = document.querySelector('.choices');
+const humanChoiceMade = document.createElement('p');
+    humanChoiceMade.style.color = "rgb(238, 15, 130)";
+const compChoiceMade = document.createElement('p');
+    compChoiceMade.style.color = "rgb(246, 140, 41)";
+    declare.appendChild(humanChoiceMade);
+    declare.appendChild(compChoiceMade);
+//const winner = document.querySelector('.winner');
+//const nameWinner = document.createElement('div');
+    //winner.appendChild(nameWinner);
+const intro = document.querySelector('.intro');
 
-   
-//Function to play a game of 5 rounds
+
 function playGame() {
     let humanScore = 0;
     let computerScore = 0;
 
-    //Rules
-//    alert ("Welcome to a game of rock, paper, scissors!");
-//    alert ("You have 5 rounds to beat the computer!\n\n* rock beats scissors\n* scissors beat paper\n* and paper beats rock\n\nGood Luck!")
-
-    //Function to play one round
     function playRound(humanChoice,computerChoice) {
         if (humanChoice === "rock" && computerChoice === "scissors" 
             || humanChoice === "scissors" && computerChoice === "paper" 
             || humanChoice === "paper" && computerChoice === "rock") {
             humanScore++;
-            compChoiceMade.textContent = `Computer chose: ${computerChoice}`;
             humanChoiceMade.textContent = `You chose: ${humanChoice}`;
+            compChoiceMade.textContent = `Computer chose: ${computerChoice}`;
             roundWinner.textContent = `${humanChoice.charAt(0).toUpperCase() + humanChoice.slice(1)} beats ${computerChoice}! Your point!`;
+            roundWinner.style.color = "rgb(238, 15, 130)";
             playerScore.textContent = `Player: ${humanScore}`;
             computScore.textContent = `Computer: ${computerScore}`;
         } else if (humanChoice === "scissors" && computerChoice === "rock" 
             || humanChoice === "paper" && computerChoice === "scissors" 
             || humanChoice === "rock" && computerChoice === "paper") {
             computerScore++;
-            compChoiceMade.textContent = `Computer chose: ${computerChoice}`;
             humanChoiceMade.textContent = `You chose: ${humanChoice}`;
+            compChoiceMade.textContent = `Computer chose: ${computerChoice}`;
             roundWinner.textContent = `${computerChoice.charAt(0).toUpperCase() + computerChoice.slice(1)} beats ${humanChoice}! Computer\'s point!`;
+            roundWinner.style.color = "rgb(246, 140, 41)";
             playerScore.textContent = `Player: ${humanScore}`;
             computScore.textContent = `Computer: ${computerScore}`;
         } else if (humanChoice === "scissors" && computerChoice === "scissors" 
             || humanChoice === "paper" && computerChoice === "paper" 
             || humanChoice === "rock" && computerChoice === "rock") {
-            compChoiceMade.textContent = `Computer chose: ${computerChoice}`;
             humanChoiceMade.textContent = `You chose: ${humanChoice}`;
+            compChoiceMade.textContent = `Computer chose: ${computerChoice}`;
             roundWinner.textContent = `Tie! You both chose ${humanChoice}! No points rewarded.`;
+            roundWinner.style.color = "white";
             playerScore.textContent = `Player: ${humanScore}`;
             computScore.textContent = `Computer: ${computerScore}`;
         }
     
 
         if (humanScore === 5 || computerScore === 5) {
-            if (humanScore > computerScore) {
-                nameWinner.textContent = `The winner is ... YOU!! Congratulations!\n\nYour Score = ${humanScore} \nComputer Score = ${computerScore}`;
-            } else if (humanScore < computerScore) {
-                nameWinner.textContent =`The winner is ... The Computer!\n\nYour Score = ${humanScore} \nComputer Score = ${computerScore}`;
-            } else {
-                nameWinner.textContent = `No winner ... Its a tie!\n\nYour Score = ${humanScore} \nComputer Score = ${computerScore}`;
-            }
+            document.body.innerHTML = '';
+            
+            const winnerBox = document.createElement('div');
+                if (humanScore > computerScore) {
+                    winnerBox.textContent = "The winner is ... YOU!! Congratulations!";
+                    winnerBox.style.color = "rgb(238, 15, 130)";
+                    winnerBox.style.textShadow = "3px 3px 5px black";
+                    winnerBox.style.fontFamily = "PT Sans";
+                    winnerBox.style.fontSize = "60px";
+                    winnerBox.style.display = "flex";
+                    winnerBox.style.flexWrap = "wrap";
+                    winnerBox.style.justifyContent = "center";
+                    winnerBox.style.alignItems = "center";
+                    winnerBox.style.textAlign = "center";
+                } else if (humanScore < computerScore) {
+                    winnerBox.textContent ="The winner is ... The Computer!";
+                    winnerBox.style.color = "rgb(246, 140, 41)";
+                    winnerBox.style.textShadow = "3px 3px 5px black";
+                    winnerBox.style.fontFamily = "PT Sans";
+                    winnerBox.style.fontSize = "60px";
+                    winnerBox.style.display = "flex";
+                    winnerBox.style.flexWrap = "wrap";
+                    winnerBox.style.justifyContent = "center";
+                    winnerBox.style.alignItems = "center";
+                    winnerBox.style.textAlign = "center";
+                }
+            document.body.appendChild(winnerBox);
         }
     }
 
